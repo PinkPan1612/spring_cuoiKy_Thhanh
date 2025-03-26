@@ -1,0 +1,119 @@
+<html xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{client/layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+
+</head>
+
+<body>
+    <div layout:fragment="main-content">
+        <!-- Hero Section -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-left">
+                        <h2 class="display-4 text-danger">Nước trái cây nhiệt đới</h2>
+                        <p class="lead text-muted">Hương vị thư giãn dưới ánh nắng ấm áp trước mắt.
+                            Hưởng
+                            Sự pha trộn sảng khoái của đồ uống khi bạn thư giãn bên mặt nước. Thưởng thức và hòa mình
+                            vào vùng nhiệt đới của chúng tôi.
+                        </p>
+                    </div>
+                    <div class="col-md-6 mt-4 mt-md-0">
+                        <img th:src="@{/client/img/home1.jpg}" class="img-fluid rounded"
+                            alt="A refreshing tropical drink by the pool">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Most Popular Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center text-danger mb-4">Phổ biến</h2>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <img th:src=@{client/img/home_2.jpg} class="rounded-circle mb-3" alt="Blue Lemon & Kiwi drink"
+                            width="150" height="150">
+                        <h5 class="text-muted">Blue Lemon & Kiwi</h5>
+                        <p class="text-muted">$10.00</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img th:src=@{client/img/home_3.jpg} class="rounded-circle mb-3" alt="Rose Twist drink"
+                            width="150" height="150">
+                        <h5 class="text-muted">Rose Twist</h5>
+                        <p class="text-muted">$10.00</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <img th:src=@{client/img/home_4.jpg} class="rounded-circle mb-3" alt="Green Kiwi drink"
+                            width="150" height="150">
+                        <h5 class="text-muted">Green Kiwi</h5>
+                        <p class="text-muted">$10.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Testimonials Section -->
+        <section class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center text-teal mb-4">What our Customers say</h2>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="bg-white p-4 rounded shadow-sm">
+                            <p class="text-muted">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                posuere
+                                erat a ante."</p>
+                            <p class="text-muted">- MILLER HOLLER</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="bg-white p-4 rounded shadow-sm">
+                            <p class="text-muted">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                posuere
+                                erat a ante."</p>
+                            <p class="text-muted">- MILLER HOLLER</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="bg-white p-4 rounded shadow-sm">
+                            <p class="text-muted">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                                posuere
+                                erat a ante."</p>
+                            <p class="text-muted">- MILLER HOLLER</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Our Newsletter Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center text-danger mb-4">Join Our Newsletter</h2>
+                <p class="text-center text-muted mb-4">Stay updated with our latest releases!</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form class="bg-light p-4 rounded shadow-sm">
+                            <div class="form-group">
+                                <label for="name" class="text-muted">Name:</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="text-muted">E-mail:</label>
+                                <input type="email" class="form-control" id="email">
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
