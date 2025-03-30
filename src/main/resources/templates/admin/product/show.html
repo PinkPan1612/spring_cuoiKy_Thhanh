@@ -25,7 +25,6 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Tên sản phẩm</th>
-                                <th scope="col">Số lượng</th>
                                 <th scope="col">Giá cả</th>
                                 <th scope="col">Hành động</th>
                             </tr>
@@ -34,7 +33,6 @@
                             <tr th:each="product:${products}">
                                 <th scope="row" th:text="${product.id}"></th>
                                 <td th:text="${product.name}"></td>
-                                <td th:text="${product.quantity}"></td>
                                 <td th:text="${product.price}"></td>
                                 <td>
                                     <a class="btn btn-success mx-2"

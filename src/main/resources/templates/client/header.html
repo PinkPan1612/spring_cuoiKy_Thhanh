@@ -1,30 +1,28 @@
-<header class="bg-light py-3">
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <h1 class="h3"><a href="/" class="text-dark text-decoration-none">Juice Shop</a></h1>
-            <nav>
-                <a href="/" class="text-dark mx-2">Home</a>
-                <a href="/about" class="text-dark mx-2">About</a>
-                <a href="/menu" class="text-dark mx-2">Menu</a>
-                <a href="/cart" class="text-dark mx-2">Cart</a>
-            </nav>
-            <div>
-                <!-- Kiểm tra nếu user đã đăng nhập -->
-                <th:block th:if="${#authorization.expression('isAuthenticated()')}">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-user me-2"></i>
-                        <span class="text-dark">Xin chào: </span>
-                        <strong> <span class="fw-bold mx-2" th:text="${#authentication.name}"></span></strong>
-                        <form id="logoutForm" th:action="@{/logout}" method="POST">
-                            <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
-                        </form>
-                    </div>
-                </th:block>
+<header class="header-bg py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="text-xl font-bold"><a style="text-decoration: none;" th:href="@{/}">KhoaHocStore</a></div>
+        <nav class="d-flex gap-3">
+            <a class="text-dark" th:href="@{/}">Home</a>
+            <a class="text-dark" th:href="@{/products}">Products</a>
+            <a class="text-dark" th:href="@{/about}">About Us</a>
+            <a class="text-dark" th:href="@{/contact}">Contact Us</a>
+        </nav>
+        <div class="position-relative">
+            <th:block th:if="${#authorization.expression('isAuthenticated()')}">
+                <div class="d-flex align-items">
+                    <span class="text-dart">Xin chào: </span>
+                    <strong> <span class="fw-bold mx-2" th:text="${#authentication.name}"></span></strong>
+                    <form id="logoutForm" th:action="@{/logout}" method="POST">
+                        <button type="submit" class="btn btn-danger btn-sm mb-2">Logout</button>
+                    </form>
 
-                <th:block th:unless="${#authorization.expression('isAuthenticated()')}">
-                    <a href="/login" class="text-dark mx-2"><i class="fas fa-user"></i> Login</a>
-                </th:block>
-            </div>
+                </div>
+            </th:block>
+
+            <th:block th:unless="${#authorization.expression('isAuthenticated()')}">
+                <a th:href="@{/login}" class="btn btn-primary-custom text-white">Sign Up Now</a>
+            </th:block>
+
         </div>
     </div>
 </header>

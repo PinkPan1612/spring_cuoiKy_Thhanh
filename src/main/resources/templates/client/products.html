@@ -1,0 +1,71 @@
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{client/layout}">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Products - Product Landing Page
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{../client/css/styles.css}">
+</head>
+
+<body class="bg-primary text-dark">
+    <div layout:fragment="main-content">
+        <section class="section-bg py-5">
+            <div class="container text-center">
+                <h1 class="display-4 fw-bold">
+                    Our Products
+                </h1>
+                <p class="lead">
+                    Explore our wide range of products and find the perfect one for you.
+                </p>
+                <div class="row">
+                    <div class="col-md-4 mb-4" th:each="product : ${products}">
+
+                        <div class="card">
+                            <img alt="Product 1" class="card-img-top" height="300"
+                                th:src="@{'/uploads/img/'+${product.image}}" width="300" />
+                            <div class="card-body">
+                                <h5 class="card-title" th:text="${product.name}">
+
+                                </h5>
+                                <p class="card-text" th:text="${product.detailDesc}">
+
+                                </p>
+                                <a class="btn btn-primary-custom" href="/products">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <img alt="Product 6" class="card-img-top" height="300"
+                            src="https://storage.googleapis.com/a1aa/image/HdlJHxf1Zwun9c_beqly8giwgfzpJUDkS3EGe9VguE0.jpg"
+                            width="300" />
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Product 6
+                            </h5>
+                            <p class="card-text">
+                                Description of Product 6.
+                            </p>
+                            <a class="btn btn-primary-custom" href="#">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+</body>
+
+</html>

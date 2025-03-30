@@ -35,7 +35,7 @@ public class UserService {
 
     // get role by role_name
     public Role getRole(String role_name) {
-        return this.roleRepository.findByRoleName(role_name);
+        return this.roleRepository.findByName(role_name);
     }
 
     // delete by id
@@ -45,7 +45,7 @@ public class UserService {
     }
 
     // delete by id
-    public User getUserByEmail(String email) {
-        return this.userRepository.findByEmail(email);
+    public User getUserByUsername(String username) {
+        return this.userRepository.findByUsername(username);
     }
 }

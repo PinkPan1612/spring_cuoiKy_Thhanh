@@ -78,7 +78,7 @@ public class UserController {
         }
         String hashPassword = this.passwordEncoder.encode(user.getPassword());
         user.setPassword(hashPassword);
-        user.setRole(this.userService.getRole(user.getRole().getRole_name()));
+        user.setRole(this.userService.getRole(user.getRole().getName()));
 
         this.userService.saveUser(user);
         return "redirect:/admin/users";
@@ -105,7 +105,8 @@ public class UserController {
             System.out.println("Validation failed. Errors:" + bindingResult.getErrorCount());
             // Duyệt qua danh sách lỗi
             // for (FieldError error : bindingResult.getFieldErrors()) {
-            //     System.out.println("Field: " + error.getField() + " - Message: " + error.getDefaultMessage());
+            // System.out.println("Field: " + error.getField() + " - Message: " +
+            // error.getDefaultMessage());
             // }
             List<Role> roles = this.roleService.getAllRole();
             model.addAttribute("user", user);
@@ -114,7 +115,7 @@ public class UserController {
             return "admin/user/editUser";
         }
         if (this.userService.getUserByID(user.getId()) != null) {
-            
+
             User OUser = this.userService.getUserByID(user.getId());
 
             if (user != null) {

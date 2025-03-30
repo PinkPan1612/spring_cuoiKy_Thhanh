@@ -1,0 +1,33 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header-bg {
+    background-color: #fff;
+}
+
+.section-bg {
+    background-color: #f8f9fa;
+}
+
+.section-dark-bg {
+    background-color: #000;
+}
+
+.footer-bg {
+    background-color: #f8f9fa;
+}
+
+.text-primary-custom {
+    color: #007bff;
+}
+
+.btn-primary-custom {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-secondary-custom {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}

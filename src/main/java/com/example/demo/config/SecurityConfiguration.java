@@ -17,11 +17,13 @@ import jakarta.servlet.DispatcherType;
 @Configuration
 @EnableMethodSecurity(securedEnabled = true)
 public class SecurityConfiguration {
+        // hashcode Bcrypt
         @Bean
         public PasswordEncoder passwordEncoder() {
                 return new BCryptPasswordEncoder();
         }
 
+        // điều chỉnh username = email
         @Bean
         public UserDetailsService userDetailsService(com.example.demo.service.UserService userService) {
                 return new CustomUserDetailsService(userService); // custom at service
@@ -49,9 +51,11 @@ public class SecurityConfiguration {
                                                 .dispatcherTypeMatchers(DispatcherType.FORWARD,
                                                                 DispatcherType.INCLUDE)
                                                 .permitAll()
-                                                .requestMatchers("/", "/login", "/cart", "/about", "menu")
+                                                .requestMatchers("/", "/login", "/", "/about", "menu", "/contact",
+                                                                "/products")
                                                 .permitAll()
-                                                .requestMatchers("/client/img/**", "/client/css/**", "/client/js/**")
+                                                .requestMatchers("/client/img/**", "/client/css/**", "/client/js/**",
+                                                                "/uploads/**")
                                                 .permitAll()
                                                 .requestMatchers("/admin/**").hasRole("ADMIN")
 

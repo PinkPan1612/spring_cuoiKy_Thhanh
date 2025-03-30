@@ -7,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -28,13 +27,9 @@ public class Product {
     private double price;
 
     @NotNull
-    @NotEmpty(message = "detailDesc không được để trống")
+    @NotEmpty(message = "không được để trống")
     @Column(columnDefinition = "MEDIUMTEXT")
     private String detailDesc;
-
-    @NotNull
-    @Min(value = 1, message = "Giá phải lớn hơn 0")
-    private long quantity;
 
     private String image;
 
@@ -80,20 +75,6 @@ public class Product {
 
     public void setDetailDesc(String detailDesc) {
         this.detailDesc = detailDesc;
-    }
-
-    public long getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(long quantity) {
-        this.quantity = quantity;
-    }
-
-    @Override
-    public String toString() {
-        return "Product [id=" + id + ", name=" + name + ", price=" + price + ", detailDesc=" + detailDesc
-                + ", quantity=" + quantity + ", image=" + image + "]";
     }
 
 }

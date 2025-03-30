@@ -2,7 +2,6 @@ package com.example.demo.model;
 
 import java.util.List;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,9 +16,16 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    
+    private String name;
+    public String getName() {
+        return name;
+    }
 
-    @Column(name = "role_name", nullable = false, unique = true)
-    private String roleName;
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private String role_description; // miêu tả
 
     // user
@@ -36,25 +42,12 @@ public class Role {
         this.id = id;
     }
 
-    public String getRole_name() {
-        return roleName;
-    }
-
-    public void setRole_name(String name) {
-        this.roleName = name;
-    }
-
     public String getRole_description() {
         return role_description;
     }
 
     public void setRole_description(String description) {
         this.role_description = description;
-    }
-
-    @Override
-    public String toString() {
-        return "Role [id=" + id + ", name=" + roleName + ", description=" + role_description + "]";
     }
 
     public List<User> getUsers() {

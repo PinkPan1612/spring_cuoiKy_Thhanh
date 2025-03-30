@@ -31,11 +31,7 @@
                 <input type="text" class="form-control" th:field="*{detailDesc}">
                 <p style="color: red;" th:if="${#fields.hasErrors('detailDesc')}" th:errors="*{detailDesc}"></p>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Số lượng</label>
-                <input type="number" class="form-control" th:field="*{quantity}">
-                <p style="color: red;" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></p>
-            </div>
+
             <div class="mb-3">
                 <label class="form-label">Ảnh sản phẩm</label>
                 <input class="form-control" type="file" id="imageUpload" name="imageProduct">

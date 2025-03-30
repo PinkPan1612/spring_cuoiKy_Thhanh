@@ -34,8 +34,8 @@
                             <tr th:each="user:${users}">
                                 <th scope="row" th:text="${user.id}"></th>
                                 <td th:text="${user.fullName}"></td>
-                                <td th:text="${user.email}"></td>
-                                <td th:text="${user.role.role_name}"></td>
+                                <td th:text="${user.username}"></td>
+                                <td th:text="${user.role.name}"></td>
                                 <td>
                                     <a class="btn btn-success mx-2"
                                         th:href="@{/admin/users/detail/{id}(id=${user.id})}">

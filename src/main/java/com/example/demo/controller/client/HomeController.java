@@ -19,31 +19,36 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    public String getMethodName(Model model) {
+    public String getHomePage(Model model) {
         return "client/home";
     }
 
+    @GetMapping("/detail/{id}")
+    public String getDetailPage(Model model, @PathVariable long id) {
+        Product product = this.productService.getProductByID(id);
+        model.addAttribute("product", product);
+        return "client/detail";
+    }
+
     @GetMapping("/about")
-    public String getaboutPage() {
+    public String getAboutPage() {
         return "/client/about";
     }
 
     @GetMapping("/cart")
-    public String getcartPage() {
+    public String getCartPage() {
         return "client/cart";
     }
 
-    @GetMapping("/detail/{id}")
-    public String getdetailPage(Model model, @PathVariable long id) {
-        Product product = this.productService.getProductByID(id);
-        model.addAttribute("product", product);
-        return "client/detailProduct";
+    @GetMapping("/contact")
+    public String getContactPage() {
+        return "client/contact";
     }
 
-    @GetMapping("/menu")
-    public String getMenu(Model model) {
+    @GetMapping("/products")
+    public String getProducts(Model model) {
         List<Product> products = this.productService.getAllPr();
         model.addAttribute("products", products);
-        return "client/menu";
+        return "client/products";
     }
 }

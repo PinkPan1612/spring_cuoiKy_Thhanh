@@ -22,8 +22,8 @@
                     <input type="hidden" class="form-control" th:field="*{password}">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" th:field="*{email}" readonly>
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" th:field="*{username}" readonly>
 
                 </div>
                 <div class="mb-3">
@@ -45,7 +45,7 @@
                 <div class="mb-3">
                     <label class="form-label">Vai trò</label>
                     <select class="form-select" th:field="*{role}">
-                        <option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.role_name}"></option>
+                        <option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.name}"></option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-warning">Chỉnh sửa</button>
